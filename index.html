@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style.css">
+    <script src="https://kit.fontawesome.com/deb44971fa.js" crossorigin="anonymous"></script>
+    <title>Yoongi - Ui Card</title>
+</head>
+<body>
+<div class="card">
+    <div class="ui-card">
+        <div class="card-head"></div>
+        <div class="card-middle"></div>
+        <div class="card-bottom"></div>
+        <button class="btn">
+            <img src="./assets/images/Bars.png" alt="" width="29.44px" height="16px">
+        </button>
+    </div>
+
+    <div class="info">
+        <div class="info-top">
+            <div class="info-hi3">
+                <div class="name-level">
+                    <p>Honaki Impact 3rd</p>
+                    <p>LEVEL 51</p>
+                </div>
+                <div class="uid">
+                    <p>UID:</p>
+                    <p id="uid-value-1">208646557</p>
+                    <button onclick="copyUID('uid-value-1', this)">
+                        <i class="fa-solid fa-clone"></i>
+                    </button>
+                    <span class="copy-notification">Copied!</span>
+                </div>
+            </div>
+            <div class="level-bars" id="bars-1">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+        <div class="info-bottom">
+            <div class="info-wuwa">
+                <div class="name-level">
+                    <p>Wuthering Waves</p>
+                    <p>LEVEL 8</p>
+                </div>
+                <div class="uid">
+                    <p>UID:</p>
+                    <p id="uid-value-2">708793819</p>
+                    <button onclick="copyUID('uid-value-2', this)">
+                        <i class="fa-solid fa-clone"></i>
+                    </button>
+                    <span class="copy-notification">Copied!</span>
+                </div>
+            </div>
+            <div class="level-bars" id="bars-2">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+<script>
+function copyUID(uidId, button) {
+    var uidText = document.getElementById(uidId).innerText;
+    navigator.clipboard.writeText(uidText);
+
+    var notification = button.nextElementSibling;
+    notification.classList.add('show');
+
+    setTimeout(() => notification.classList.remove('show'), 2000);
+}
+
+document.querySelector('.btn').addEventListener('click', function() {
+    var info = document.querySelector('.info');
+    info.classList.toggle('appear');
+});
+
+
+</script>
+
+</html>
